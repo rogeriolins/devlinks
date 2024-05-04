@@ -1,0 +1,208 @@
+/* Ver: CSSTricks */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --bg-switch-url: url(./assets/MoonStars.svg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --social-link-hover: rgba(255, 255, 255, 0.2);
+}
+
+.light-mode {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --bg-switch-url: url(./assets/Sun.svg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.01);
+  --social-link-hover: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  /* 
+   * background-image: url(./assets/bg-mobile.jp);
+   * background-repeat: no-repeat;    <- Não repetir
+   * background-position: top center; <- Topo e Centro
+   * background-size: cover;          <- Cobrir
+   * 
+   * Todos podem ser colocados apenas na tag backgound, mas pra
+   * usar a tag size é importante colocar uma / no final
+   */
+  background: var(--bg-url) no-repeat top center / cover;
+}
+
+body * {
+  font-family: "inter", sans-serif;
+  color: var(--text-color);
+}
+
+main {
+  width: 360px;
+  /* Alinhamento Right->Direita e Left->Esquerda automatico */
+  /* height: 712px; */
+  margin: 56px auto 0px;
+  /* border: 1px solid red; */
+
+  padding: 0px 24px;
+}
+
+#avatar {
+  /* Elemento pai pode alinhar os filhos com a propriedade text-align */
+  text-align: center;
+  padding: 24px;
+}
+
+#avatar img {
+  width: 112px;
+  /* margin: 56px auto; */
+
+  /*
+     Por padrão alguns elementos como o img são inline
+     display: block; 
+     Transformando em block a propriedade margin: auto
+     ele centraliza
+  */
+}
+
+/* Switch Mode Theme Dark and Light */
+#switchModeTheme {
+  /* Posicionamento dos filhos serão relativos a ele. Os filhos são absolutos ao relative*/
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+/* Button */
+#switchModeTheme button {
+  width: 32px;
+  height: 32px;
+  background: white var(--bg-switch-url) no-repeat center;
+  border: 0px;
+  border-radius: 50%;
+
+  /* Posicionamento de elementos */
+  position: absolute;
+  z-index: 1;
+  left: 0;
+
+  /* Alinhando o elemento bem ao meio */
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.light-mode #switchModeTheme button {
+  right: 0;
+  left: initial;
+}
+
+/* Track */
+#switchModeTheme span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  --webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+
+  z-index: 0;
+}
+
+#insta {
+  font-weight: 500;
+  /* Tamanho padrão dos navegadores */
+  font-size: 16px;
+  line-height: 24px;
+
+  margin-top: 8px;
+}
+
+/* Links */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+
+ul li a {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  /* Consultar se é possivel usar em CanIUse.com quando necessário usar o -webkit- */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  font-weight: 500;
+  text-decoration: none;
+
+  /* Efeitos */
+  transition: background 0.2s;
+}
+
+/* Pseudo-Selector */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* Icones */
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+  gap: 8px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--social-link-hover);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+footer a,
+.icon {
+  margin: 0 4px;
+}
+
+#info {
+  width: 460px;
+  margin: 20px auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
