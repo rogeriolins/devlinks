@@ -13,18 +13,16 @@ function onToggleMode() {
   const img = document.querySelector("#avatar img")
   if (body.classList.contains("light-mode")) {
     // Light Mode
-    img
-      .setAttribute("src", "./assets/my-avatar-light.png")
-      .setAttribute(
-        "alt",
-        "Foto Rogério Lins com fundo verde, camiseta preta, de oculos, barba e mão no queixo, sério e sem sorrir."
-      )
+    img.setAttribute("src", "./assets/my-avatar-light.png")
+    img.setAttribute(
+      "alt",
+      "Foto Rogério Lins com fundo verde, camiseta preta, de oculos, barba e mão no queixo, sério e sem sorrir."
+    )
   } else {
-    img
-      .setAttribute("src", "./assets/my-avatar.png")
-      .setAttribute(
-        "alt",
-        "Foto Rogério Lins com fundo verde, camiseta preta, de oculos e barba sorrindo."
-      )
+    img.setAttribute("src", "./assets/my-avatar.png")
+    img.setAttribute(
+      "alt",
+      "Foto Rogério Lins com fundo verde, camiseta preta, de oculos e barba sorrindo."
+    )
   }
 }
